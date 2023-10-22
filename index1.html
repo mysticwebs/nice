@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hidden GIF Website</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000; /* Default background color */
+      z-index: 1;
+    }
+    #gif {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none; /* Initially hidden */
+      z-index: 2;
+    }
+    button {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgAudio" src="nature-music.mp3" preload="auto"></audio>
+  <button id="startButton">Start</button>
+  <script>
+    const bg = document.getElementById('bg');
+    const gif = document.getElementById('gif');
+    const audio = document.getElementById('bgAudio');
+    const startButton = document.getElementById('startButton');
+
+    startButton.addEventListener('click', () => {
+      gif.style.display = 'block';
+      bg.style.background = 'url("images/gif.gif")';
+      audio.play();
+    });
+  </script>
+</body>
+</html>
