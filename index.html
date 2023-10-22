@@ -1,21 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>NiceWeb | MYSTIC</title>
+    <link rel="icon" type="image/x-icon" href="images/icon.ico">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="loading-screen">
+        <img src="images/logo.png" alt="MYSTIC" class="intro">
+    </div>
     <div id="white-bg"></div>
-    <button id="start-button">Start</button>
-    <div id="content">
-        <h1>hhh</h1>
+    <div id="content" style="display: none;">
+        <header>
+            <div>
+                <a href="index.html"><img src="images/logo.png" class="logo"></a>
+            </div>
+        </header>
+        <div>
+            <h1>Welcome to NiceWeb!</h1>
+            <button id="start-button" class="start">Login</button>
+        </div>
     </div>
     <img src="images/gif.gif" alt="GIF" id="gif" style="display: none;">
-    <audio id="audio" src="nature-music.mp3" preload="auto"></audio>
+    <audio id="audio" src="nature-music.mp3" preload="auto" loop></audio>
     <script src="js/fs.js"></script>
     <script>
         startButton.style.display = "none"; // Hide the "Start" button
 gif.style.width = "100%";
 gif.style.height = "100%";
+
+    </script>
+    <script>
+        window.addEventListener("load", function () {
+    // Add a 5-second delay
+    setTimeout(function () {
+        // Hide the loading screen
+        document.getElementById("loading-screen").style.display = "none";
+        // Show the content
+        document.getElementById("content").style.display = "block";
+    }, 3000); // 5000 milliseconds = 5 seconds
+});
 
     </script>
 </body>
